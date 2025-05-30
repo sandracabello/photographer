@@ -26,7 +26,7 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Bebas Neue", sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
@@ -46,17 +46,18 @@ section {
     color: white;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 2;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: white
 }
 a:hover {
     text-decoration: underline;
 }
 a:visited {
-    color: inherit;
+    color: white;
 }
 a:focus {
     outline: none;
