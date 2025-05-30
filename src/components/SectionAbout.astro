@@ -1,4 +1,5 @@
 ---
+import SectionContact from "./SectionContact.astro"
 ---
 <section class="about">
     <div class="about__description">
@@ -11,28 +12,22 @@
             <p>Cada evento, cada sesión, es una oportunidad para mirar mejor. Y para contar con imágenes lo que las palabras no alcanzan.</p>
         </div>
     </div>
+    <SectionContact class="about__contact" />
     <img src="./images/about.png" alt="" class="about__image" />
 </section>
 
 <style lang="scss">
     .about {
         display: flex;
-        gap: 140px;
+        gap: 50px;
         align-items: center;
         border-top: 1px solid #666666;
         border-bottom: 1px solid #666666;
         padding: 4rem;
-
-        &__description {
-            line-height: 2;
-
-            p {
-                margin: 0
-            }
-        }
+        align-items: flex-start;
 
         &__image {
-            width: 300px;
+            width: 250px;
             height: auto;
             border-radius: 4px;
         }
