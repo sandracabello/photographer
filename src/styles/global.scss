@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Questrial&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-body, html {
+html, body {
     margin: 0;
     padding: 0;
     font-family: "Questrial", sans-serif;
@@ -9,6 +9,12 @@ body, html {
     font-size: 16px;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
 main {
@@ -20,7 +26,8 @@ main {
     position: relative;
 
     .content {
-        width: 1200px;
+        width: 100vw;
+        padding: 0 2rem;
     }
 }
 

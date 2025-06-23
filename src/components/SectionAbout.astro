@@ -12,24 +12,36 @@ import SectionContact from "./SectionContact.astro"
             <p>Cada evento, cada sesión, es una oportunidad para mirar mejor. Y para contar con imágenes lo que las palabras no alcanzan.</p>
         </div>
     </div>
-    <SectionContact class="about__contact" />
+    <div class="about__contact">
+         <SectionContact />
+    </div>
     <img src="./images/about.png" alt="" class="about__image" />
 </section>
 
 <style lang="scss">
     .about {
         display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
         gap: 50px;
-        align-items: center;
+        justify-content: center;
         border-top: 1px solid #666666;
         border-bottom: 1px solid #666666;
         padding: 4rem;
         align-items: flex-start;
 
+
+        &__description,
+        &__contact,
         &__image {
-            width: 250px;
-            height: auto;
+            flex: 1 1 300px; /* Se adaptan pero no bajan de 300px */
+            max-width: 100%;  /* Opcional: limitar el máximo para mantener 3 columnas grandes */
+            min-width: 280px;
+        }
+
+        &__image {
             border-radius: 4px;
+            max-width: 30%;
         }
     }
 </style>

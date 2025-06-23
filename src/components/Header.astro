@@ -52,5 +52,43 @@
         }
     }
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    height: 450px;
+    .header__content {
+      .header__title {
+        font-size: 32px;
+      }
+      .header__slogan {
+        font-size: 16px;
+      }
+      .header__job {
+        font-size: 16px;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 320px;
+    .header__content {
+      padding: 0 10px;
+      .header__title {
+        font-size: 20px;
+      }
+      .header__slogan {
+        font-size: 12px;
+      }
+      .header__job {
+        font-size: 12px;
+        padding: 3px;
+      }
+    }
+  }
+}
 </style>
 
