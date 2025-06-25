@@ -11,25 +11,32 @@ import SectionContact from "./SectionContact.astro"
             <p>No busco imágenes perfectas. Busco verdad, ritmo, emoción.</p>
             <p>Cada evento, cada sesión, es una oportunidad para mirar mejor. Y para contar con imágenes lo que las palabras no alcanzan.</p>
         </div>
+         <SectionContact />
     </div>
-    <SectionContact class="about__contact" />
     <img src="./images/about.png" alt="" class="about__image" />
 </section>
 
 <style lang="scss">
     .about {
         display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
         gap: 50px;
-        align-items: center;
-        border-top: 1px solid #666666;
-        border-bottom: 1px solid #666666;
+        justify-content: center;
         padding: 4rem;
-        align-items: flex-start;
+        width: 100%;
+        max-width: 1200px;
+
+        &__description {
+            min-width: 300px;
+            max-width: 600px;
+        }
 
         &__image {
-            width: 250px;
-            height: auto;
             border-radius: 4px;
+            object-fit: cover;
+            width: 400px;
         }
+
     }
 </style>

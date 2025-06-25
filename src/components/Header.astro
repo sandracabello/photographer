@@ -3,8 +3,8 @@
 <header class="header">
     <div class="header__content">
         <h1 class="header__title">La emoción está en el segundo antes del movimiento</h1>
-        <p class="header__slogan">Una fracción de segundo. Un disparo. Una historia</p>
-        <h2 class="header__job">Fotógrafo deportivo</h2>
+        <p class="header__slogan">Especialista en fotografafía deportiva</p>
+        <h2 class="header__job">Juan Pablo Flores Jiménez - Fotógrafo</h2>
     </div>
 </header>
 
@@ -51,6 +51,44 @@
             padding: 7px;
         }
     }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    height: 450px;
+    .header__content {
+      .header__title {
+        font-size: 32px;
+      }
+      .header__slogan {
+        font-size: 16px;
+      }
+      .header__job {
+        font-size: 16px;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 320px;
+    .header__content {
+      padding: 0 10px;
+      .header__title {
+        font-size: 20px;
+      }
+      .header__slogan {
+        font-size: 12px;
+      }
+      .header__job {
+        font-size: 12px;
+        padding: 3px;
+      }
+    }
+  }
 }
 </style>
 
