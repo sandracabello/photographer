@@ -18,16 +18,21 @@ html, body {
 }
 
 main {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 60px;
     position: relative;
+    width: 100vw;
 
     .content {
-        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         padding: 0 2rem;
+
+        section {
+            width: 100vw;
+        }
     }
 }
 
