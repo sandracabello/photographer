@@ -1,19 +1,18 @@
 ---
 import SectionContact from "./SectionContact.astro"
+import marked from '../js/marked.js';
+
+const { about, doc, email, image } = Astro.props
+const html = marked(about);
+const docHtml = marked(doc);
 ---
 <section class="about">
     <div class="about__description">
         <h2>Sobre mí</h2>
-        <div class="about__text">
-            <p>Me interesa el instante en que todo está a punto de suceder.</p>
-            <p>Ese segundo de tensión donde el cuerpo, la luz y el silencio se encuentran.</p>
-            <p>La fotografía deportiva llegó como una forma de estar cerca del movimiento, de entenderlo sin competir. Empecé en entrenamientos locales, documentando gestos que pasaban desapercibidos. Y con el tiempo, entendí que ahí también había historia.</p>
-            <p>No busco imágenes perfectas. Busco verdad, ritmo, emoción.</p>
-            <p>Cada evento, cada sesión, es una oportunidad para mirar mejor. Y para contar con imágenes lo que las palabras no alcanzan.</p>
-        </div>
-         <SectionContact />
+        <div class="about__text" set:html={html}></div>
+         <SectionContact doc={docHtml} email={email} />
     </div>
-    <img src="./images/about.png" alt="" class="about__image" />
+    <img src={image} alt="" class="about__image" />
 </section>
 
 <style lang="scss">

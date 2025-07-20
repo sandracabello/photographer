@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+local_backend: true
+site_url: "http://localhost:4321"
+publish_mode: editorial_workflow
+display_url: "http://localhost:4321" # URL del sitio, usado para generar enlaces en los correos electrónicos de confirmación
+
+media_folder: "public/images" # Ubicación donde se almacenarán los archivos en el repositorio
+public_folder: "/images" # El atributo src para los medios cargados
+
+
+collections:
+  - name: "blog" # Usado en rutas, por ejemplo, /admin/collections/blog
+    label: "Blog" # Usado en la interfaz de usuario
+    folder: "src/content/blog" # La ruta a la carpeta donde se almacenan los documentos
+    create: true # Permitir a los usuarios crear nuevos documentos en esta colección
+    fields: # Los campos para cada documento, generalmente al principio
+       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+       - { label: "Title", name: "title", widget: "string" }
+       - { label: "Publish Date", name: "date", widget: "datetime" }
+       - { label: "Featured Image", name: "thumbnail", widget: "image" }
+       - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
+       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "pages" # Usado en rutas, por ejemplo, /admin/collections/pages
+    label: "Páginas" # Usado en la interfaz de usuario
+    files: # Los archivos en esta colección
+      - file: "src/content/index.md" # La ruta al archivo
+        label: "Home" # Usado en la interfaz de usuario
+        name: "index" # Usado en rutas, por ejemplo, /admin/collections/pages/index
+        fields: # Los campos para este archivo
+          - { label: "🔝 HERO - Título principal", name: "title", widget: "string" }
+          - { label: "🔝 HERO - Subtítulo", name: "subtitle", widget: "string" }
+          - { label: "🔝 HERO - Texto", name: "text", widget: "string" }
+          - { label: "🔝 HERO - Imagen de fondo", name: "image", widget: "image" }
+          - { label: "💬 Frase puente", name: "phrase", widget: "string" }
+          - { label: "✨ Marquesina - listado de palabras", name: "marquee", widget: "string" }
+          - { label: "👨‍🚀 Sobre mí", name: "about", widget: "markdown" }
+          - { label: "📸 ¿Te gustaría que lo documente?", name: "aboutDoc", widget: "markdown" }
+          - { label: "✉️ Email de contacto", name: "email", widget: "string" }
+          - { label: "📸 Imagen sobre mí", name: "backgroundImage", widget: "image" }
+      - file: "src/content/privacidad.md" # La ruta al archivo
+        label: "Política de privacidad" # Usado en la interfaz de usuario
+        name: "privacidad" # Usado en rutas, por ejemplo, /admin/collections/pages/index
+        fields: # Los campos para este archivo
+          - { label: "Título principal", name: "title", widget: "string" }
+          - { label: "Contenido", name: "content", widget: "markdown" }
+      - file: "src/content/cookies.md" # La ruta al archivo
+        label: "Política de cookies" # Usado en la interfaz de usuario
+        name: "cookies" # Usado en rutas, por ejemplo, /admin/collections/pages/index
+        fields: # Los campos para este archivo
+          - { label: "Título principal", name: "title", widget: "string" }
+          - { label: "Contenido", name: "content", widget: "markdown" }
+      - file: "src/content/aviso-legal.md" # La ruta al archivo
+        label: "Aviso legal" # Usado en la interfaz de usuario
+        name: "aviso-legal" # Usado en rutas, por ejemplo, /admin/collections/pages/index
+        fields: # Los campos para este archivo
+          - { label: "Título principal", name: "title", widget: "string" }
+          - { label: "Contenido", name: "content", widget: "markdown" }

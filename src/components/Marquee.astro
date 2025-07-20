@@ -1,29 +1,14 @@
 ---
+    const words = Astro.props.words || 'luz - movimiento - ritmo - reflejo - impulso - precisión - mirada - gesto - cadencia - tensión - silencio - enfoque';
+    // Default words if none are provided
+    // You can customize this default value as needed
 ---
 <section class="marquee">
-    <span class="marquee__text">luz</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">movimiento</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">ritmo</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">reflejo</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">impulso</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">precisión</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">mirada</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">gesto</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">cadencia</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">tensión</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">silencio</span>
-    <span class="marquee__text">-</span>
-    <span class="marquee__text">enfoque</span>
+        <span class="marquee__text">-</span>
+        {words.split(' - ').map((word:string, index:number) => (
+            <span class="marquee__text">{word}</span>
+            <span class="marquee__text">-</span>
+        ))}
 </section>
 
 <style lang="scss">
