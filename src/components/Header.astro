@@ -1,16 +1,17 @@
 ---
+const data = Astro.props.data;
+const { title, subtitle, text, image } = data;
 ---
-<header class="header">
+<header class="header" style={`background-image: url('${image}');`}>
     <div class="header__content">
-        <h1 class="header__title">La emoción está en el segundo antes del movimiento</h1>
-        <p class="header__slogan">Especialista en fotografafía deportiva</p>
-        <h2 class="header__job">Juan Pablo Flores Jiménez - Fotógrafo</h2>
+        <h1 class="header__title">{title}</h1>
+        <p class="header__slogan">{subtitle}</p>
+        <h2 class="header__job">{text}</h2>
     </div>
 </header>
 
 <style>
 .header {
-    background-image: url('./images/hero.png');
     background-size: cover;
     background-position:cover;
     background-repeat: no-repeat;

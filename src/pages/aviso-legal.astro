@@ -2,7 +2,7 @@
 import LayoutPage from "../layouts/LayoutPage.astro"
 import marked from '../js/marked.js'
 
-const contentFile = await import('../content/cookies.md')
+const contentFile = await import('../content/aviso-legal.md')
 const { frontmatter } = contentFile
 const html = marked(frontmatter.content);
 ---

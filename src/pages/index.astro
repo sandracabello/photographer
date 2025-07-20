@@ -8,16 +8,19 @@ import SectionMarquee from '../components/Marquee.astro'
 import SectionInterlude from '../components/SectionInterlude.astro'
 import SectionAbout from '../components/SectionAbout.astro'
 import Footer from '../components/Footer.astro'
+
+const contentFile = await import('../content/index.md')
+const { frontmatter } = contentFile;
 ---
 <Layout>
-	<Header />
+	<Header data={frontmatter}/>
 	<main>
 		<div class="content">
 			<SectionPosts />
-			<SectionBridgePhrase />
-			<SectionMarquee />
+			<SectionBridgePhrase phrase={frontmatter.phrase} />
+			<SectionMarquee words={frontmatter.marquee} />
 			<!-- <SectionInterlude /> -->
-			<SectionAbout />
+			<SectionAbout about={frontmatter.about} doc={frontmatter.aboutDoc} email={frontmatter.email} image={frontmatter.backgroundImage} />
 		</div>
 	</main>
 	<Footer />
