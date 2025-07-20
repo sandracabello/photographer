@@ -12,7 +12,7 @@ const docHtml = marked(doc);
         <div class="about__text" set:html={html}></div>
          <SectionContact doc={docHtml} email={email} />
     </div>
-    <img src={image} alt="" class="about__image" />
+    <img src={`${import.meta.env.BASE_URL}${image}`} alt="" class="about__image" />
 </section>
 
 <style lang="scss">

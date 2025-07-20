@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "cms:proxy": "netlify-cms-proxy-server",
-    "build:gh": "PUBLIC_BASE_URL=/photographer/ astro build"
+    "build:gh": "npm run clean && PUBLIC_BASE_URL=/photographer/ astro build",
+    "clean": "rm -rf .astro dist"
   },
   "dependencies": {
     "astro": "^5.8.0",
