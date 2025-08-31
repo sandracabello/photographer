@@ -6,7 +6,7 @@ const events = defineCollection({
     title: z.string(),
     thumbnail: z.string(),
     description: z.string(),
-    location: z.string()
+    location: z.string(),
   }),
 });
 
