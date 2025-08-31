@@ -1,0 +1,83 @@
+---
+import LayoutPage from "../../layouts/LayoutPage.astro"
+import { getCollection } from 'astro:content';
+
+const events = await getCollection('events');
+---
+<LayoutPage>
+	<h1>EVENTOS</h1>
+     <p>En esta sección se mostrarán los eventos recientes que hemos organizado.</p>
+	<section class="events-list">
+        {events.map((event:any) => (
+            <article>
+                <img src={event.data.thumbnail} alt={event.data.title} />
+                <div class="events-list__info">
+                    <h2>{event.data.title}</h2>
+                    <p>{event.data.description}</p>
+                    <a href={`/eventos/${event.slug}`} class="link">Ver más</a>
+                </div>
+            </article>
+        ))}
+    </section>
+</LayoutPage>
+<style lang="scss">
+    .events-list {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        gap: 2rem;
+        margin-top: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 1100px;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 2rem;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: max-content;
+            img {
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+                border-radius: 4px;
+                aspect-ratio: 3 / 4;
+                object-fit: cover;
+            }
+            .events-list__info {
+                width: 100%;
+                max-width: 250px;
+                margin-top: 1rem;
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                h2 {
+                    font-size: 1.5rem;
+                    margin: 0 0 0.5rem 0;
+                }
+
+                p {
+                     overflow: hidden;
+                     display: -webkit-box;
+                     -webkit-box-orient: vertical;
+                     -webkit-line-clamp: 3;
+                }
+            }
+        }
+    }
+</style>

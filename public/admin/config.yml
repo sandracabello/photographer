@@ -12,17 +12,17 @@ public_folder: "/images" # El atributo src para los medios cargados
 
 
 collections:
-  - name: "blog" # Usado en rutas, por ejemplo, /admin/collections/blog
-    label: "Blog" # Usado en la interfaz de usuario
-    folder: "src/content/blog" # La ruta a la carpeta donde se almacenan los documentos
+  - name: "eventos" # Usado en rutas, por ejemplo, /admin/collections/eventos
+    label: "Eventos" # Usado en la interfaz de usuario
+    folder: "src/content/events" # La ruta a la carpeta donde se almacenan los documentos
     create: true # Permitir a los usuarios crear nuevos documentos en esta colección
     fields: # Los campos para cada documento, generalmente al principio
-       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+       - { label: "Imagen hero", name: "thumbnail", widget: "image" }
        - { label: "Title", name: "title", widget: "string" }
-       - { label: "Publish Date", name: "date", widget: "datetime" }
-       - { label: "Featured Image", name: "thumbnail", widget: "image" }
-       - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
-       - { label: "Body", name: "body", widget: "markdown" }
+       - { label: "Fecha del evento", name: "date", widget: "datetime" }
+       - { label: "Ubicación del evento", name: "location", widget: "string" }
+       - { label: "Descripción del evento", name: "description", widget: "text" }
+       - { label: "Contenido del evento", name: "body", widget: "markdown" }
   - name: "pages" # Usado en rutas, por ejemplo, /admin/collections/pages
     label: "Páginas" # Usado en la interfaz de usuario
     files: # Los archivos en esta colección
