@@ -2,29 +2,31 @@
 ---
 import LayoutPage from "../../layouts/LayoutPage.astro"
 import marked from '../../js/marked.js'
-import { getCollection } from 'astro:content';
 const { slug } = Astro.params;
-const url = `../../content/events/${slug}.md`
-const contentFile = await import(url)
+import { getCollection } from "astro:content";
 
-const { frontmatter } = contentFile
+const event = (await getCollection("events")).find((e) => e.slug === slug);
+if (!event) {
+  return new Response(null, { status: 404, statusText: "Evento no encontrado" });
+}
 
-const event = await getCollection('events', (entry) => entry.slug === slug);
-const content = event[0]
+const content = await event.render();
+const data = content.remarkPluginFrontmatter
+const html = marked(event.body);
+
 ---
 <LayoutPage>
     <section class="event">
         <a href="/eventos" class="event-return">← Volver a eventos</a>
         <section class="event-hero">
-            <img src={content.data.thumbnail} alt={content.data.title}>
+            <img src={data.thumbnail} alt={data.title} />
             <section class="event-details">
-                <h1>{content.data.title}</h1>
-                <h2>{content.data.description}</h2>
-                <p>Ubicación: {content.data.location}--</p>
+                <h1>{data.title}</h1>
+                <h2>{data.description}</h2>
+                <p>Ubicación: {data.location}--</p>
             </section>
         </section>
-        <section class="event-content" set:html={content.rendered?.html}></section>
-
+         <section class="event-content" set:html={html}></section>
     </section>
 </LayoutPage>
 
