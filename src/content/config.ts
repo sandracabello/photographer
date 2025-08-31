@@ -1,5 +1,4 @@
-import { defineCollection, z } from 'astro:content';
-import { date } from 'astro:schema';
+import { defineCollection, z, } from 'astro:content';
 
 const events = defineCollection({
   type: 'content',
@@ -7,12 +6,7 @@ const events = defineCollection({
     title: z.string(),
     thumbnail: z.string(),
     description: z.string(),
-    date: date(),
-    rendered: z.string(),
-    filePath: z.string(),
-    data: z.object({
-      location: z.string(),
-    }),
+    location: z.string()
   }),
 });
 
