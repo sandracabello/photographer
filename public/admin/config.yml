@@ -17,7 +17,7 @@ public_folder: "/images" # El atributo src para los medios cargados
 collections:
   - name: "eventos" # Usado en rutas, por ejemplo, /admin/collections/eventos
     label: "Eventos" # Usado en la interfaz de usuario
-    folder: "public/content/events" # La ruta a la carpeta donde se almacenan los documentos
+    folder: "src/content/events" # La ruta a la carpeta donde se almacenan los documentos
     create: true # Permitir a los usuarios crear nuevos documentos en esta colección
     fields: # Los campos para cada documento, generalmente al principio
        - { label: "Imagen hero", name: "thumbnail", widget: "image" }
@@ -29,7 +29,7 @@ collections:
   - name: "pages" # Usado en rutas, por ejemplo, /admin/collections/pages
     label: "Páginas" # Usado en la interfaz de usuario
     files: # Los archivos en esta colección
-      - file: "public/content/index.md" # La ruta al archivo
+      - file: "src/content/index.md" # La ruta al archivo
         label: "Home" # Usado en la interfaz de usuario
         name: "index" # Usado en rutas, por ejemplo, /admin/collections/pages/index
         fields: # Los campos para este archivo
@@ -43,19 +43,19 @@ collections:
           - { label: "📸 ¿Te gustaría que lo documente?", name: "aboutDoc", widget: "markdown" }
           - { label: "✉️ Email de contacto", name: "email", widget: "string" }
           - { label: "📸 Imagen sobre mí", name: "backgroundImage", widget: "image" }
-      - file: "public/content/privacidad.md" # La ruta al archivo
+      - file: "src/content/privacidad.md" # La ruta al archivo
         label: "Política de privacidad" # Usado en la interfaz de usuario
         name: "privacidad" # Usado en rutas, por ejemplo, /admin/collections/pages/index
         fields: # Los campos para este archivo
           - { label: "Título principal", name: "title", widget: "string" }
           - { label: "Contenido", name: "content", widget: "markdown" }
-      - file: "public/content/cookies.md" # La ruta al archivo
+      - file: "src/content/cookies.md" # La ruta al archivo
         label: "Política de cookies" # Usado en la interfaz de usuario
         name: "cookies" # Usado en rutas, por ejemplo, /admin/collections/pages/index
         fields: # Los campos para este archivo
           - { label: "Título principal", name: "title", widget: "string" }
           - { label: "Contenido", name: "content", widget: "markdown" }
-      - file: "public/content/aviso-legal.md" # La ruta al archivo
+      - file: "src/content/aviso-legal.md" # La ruta al archivo
         label: "Aviso legal" # Usado en la interfaz de usuario
         name: "aviso-legal" # Usado en rutas, por ejemplo, /admin/collections/pages/index
         fields: # Los campos para este archivo
