@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   branch: main # Branch to update (optional; defaults to master)
   repo: usuario/repo
 
@@ -14,8 +14,6 @@ publish_mode: editorial_workflow
 
 media_folder: "public/images" # Ubicación donde se almacenarán los archivos en el repositorio
 public_folder: "/images" # El atributo src para los medios cargados
-
-
 
 collections:
   - name: "eventos" # Usado en rutas, por ejemplo, /admin/collections/eventos
