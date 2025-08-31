@@ -3,6 +3,7 @@ title: Ritmo, técnica y emoción en la pista
 date: 2025-08-29T21:07:00.000+02:00
 thumbnail: /images/chatgpt-image-29-ago-2025-21_08_59.png
 description: Crónica visual del torneo de tenis veraniego
+location: Málaga
 ---
 El sol caía sobre las pistas del club de Marbella mientras los jugadores se preparaban para un día de intensidad deportiva. La fotografía buscaba capturar no solo los golpes y la técnica, sino también los gestos de concentración, la tensión en cada punto y la conexión del público con el espectáculo.
 
