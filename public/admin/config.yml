@@ -1,7 +1,6 @@
 backend:
-  name: github
+  name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-  repo: usuario/repo
 
 #local_backend: true
 #site_url: "http://localhost:4321"
