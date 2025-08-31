@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 const events = await getCollection('events');
 events.reverse();
 events.splice(3);
-console.log(events)
 ---
 <section class="section-events">
     <h2>EVENTOS</h2>

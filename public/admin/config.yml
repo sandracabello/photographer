@@ -2,13 +2,18 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-local_backend: true
-site_url: "http://localhost:4321"
+#local_backend: true
+#site_url: "http://localhost:4321"
+#publish_mode: editorial_workflow
+#display_url: "http://localhost:4321" # URL del sitio, usado para generar enlaces en los correos electrónicos de confirmación
+
+site_url: "https://68b40bfb92f9820f2c1b3134--superb-gnome-05aa3b.netlify.app"
+display_url: "https://68b40bfb92f9820f2c1b3134--superb-gnome-05aa3b.netlify.app" # URL del sitio, usado para generar enlaces en los correos electrónicos de confirmación
 publish_mode: editorial_workflow
-display_url: "http://localhost:4321" # URL del sitio, usado para generar enlaces en los correos electrónicos de confirmación
 
 media_folder: "public/images" # Ubicación donde se almacenarán los archivos en el repositorio
 public_folder: "/images" # El atributo src para los medios cargados
+
 
 
 collections:

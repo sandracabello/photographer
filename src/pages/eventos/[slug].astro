@@ -11,7 +11,6 @@ const { frontmatter } = contentFile
 
 const event = await getCollection('events', (entry) => entry.slug === slug);
 const content = event[0]
-console.log(content)
 ---
 <LayoutPage>
     <section class="event">
