@@ -1,0 +1,114 @@
+
+---
+import LayoutPage from "../../layouts/LayoutPage.astro"
+import marked from '../../js/marked.js'
+import { getCollection } from 'astro:content';
+const { slug } = Astro.params;
+const url = `../../content/events/${slug}.md`
+const contentFile = await import(url)
+
+const { frontmatter } = contentFile
+
+const event = await getCollection('events', (entry) => entry.slug === slug);
+const content = event[0]
+console.log(content)
+---
+<LayoutPage>
+    <section class="event">
+        <a href="/eventos" class="event-return">← Volver a eventos</a>
+        <section class="event-hero">
+            <img src={content.data.thumbnail} alt={content.data.title}>
+            <section class="event-details">
+                <h1>{content.data.title}</h1>
+                <h2>{content.data.description}</h2>
+                <p>{content.data.date}</p>
+                <p>Ubicación: {content.data.location}--</p>
+            </section>
+        </section>
+        <section class="event-content" set:html={content.rendered?.html}></section>
+
+    </section>
+</LayoutPage>
+
+<style lang="scss">
+    .event {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 1024px;
+
+        .event-hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            img {
+                width: auto;
+                height: 500px;
+                border-radius: 4px;
+                display: block;
+            }
+
+            .event-details {
+                margin-left: 2rem;
+                max-width: 400px;
+                text-align: right;
+
+                h1 {
+                font-size: 4rem;
+                margin: 0;
+            }
+
+                h2 {
+                    font-size: 1.5rem;
+                    font-weight: normal;
+                    margin-top: 0.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    margin: 0.5rem 0;
+                }
+            }
+        }
+        section {
+            margin: 0;
+        }
+
+        .event-content {
+            margin-top: 5rem;
+        }
+    }
+
+    .event-return {
+        display: inline-block;
+        margin-bottom: 1rem;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .event {
+            .event-hero {
+                flex-direction: column;
+                align-items: center;
+
+                .event-details {
+                    margin-left: 0;
+                    text-align: center;
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+</style>

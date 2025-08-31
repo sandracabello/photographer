@@ -74,3 +74,35 @@ a:visited {
 a:focus {
     outline: none;
 }
+
+.link {
+    color: black;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:focus {
+        color: #0056b3;
+    }
+
+    &:active,
+    &:visited {
+        color: black;
+    }
+}
+
+
+.event-content p {
+    margin-bottom: 2rem;
+}
+
+.event-content img {
+    width: 60%;
+    margin: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+strong {
+    font-weight: 900;
+}

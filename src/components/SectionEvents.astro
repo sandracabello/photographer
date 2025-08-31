@@ -1,0 +1,89 @@
+---
+import { getCollection } from 'astro:content';
+const events = await getCollection('events');
+events.reverse();
+events.splice(3);
+console.log(events)
+---
+<section class="section-events">
+    <h2>EVENTOS</h2>
+    <div class="section-events__content">
+        {events && events.map((event:any) => (
+            <article class="section-events__card">
+                <img src={event.data.thumbnail} alt={event.data.title} />
+                <div class="section-events__info">
+                    <h3>{event.data.title}</h3>
+                    <p class="section-events__subtitle">{event.data.description}</p>
+                    <a href={`/eventos/${event.slug}`} class="link">Ver más</a>
+                </div>
+            </article>
+        ))}
+    </div>
+    <a href="/eventos" class="button">Ver todos los eventos</a>
+</section>
+
+<style lang="scss">
+.section-events {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 2rem;
+
+    h2 {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    &__content {
+        width: 100vw;
+        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        padding: 0 2rem;
+    }
+
+    &__card {
+        width: 300px;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 5px;
+        height: max-content;
+
+        img {
+            border-radius: 4px;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+    }
+
+    &__info {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 160px;
+    }
+
+    &__subtitle {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        font-style: italic;
+    }
+
+    .button {
+        margin-top: 6rem;
+    }
+}
+</style>

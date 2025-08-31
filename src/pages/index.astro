@@ -2,7 +2,7 @@
 import Header from '../components/Header.astro'
 import Layout from '../layouts/Layout.astro'
 import Nav from '../components/Nav.astro'
-import SectionPosts from '../components/SectionPosts.astro'
+import SectionEvents from '../components/SectionEvents.astro'
 import SectionBridgePhrase from '../components/SectionBridgePhrase.astro'
 import SectionMarquee from '../components/Marquee.astro'
 import SectionInterlude from '../components/SectionInterlude.astro'
@@ -16,7 +16,7 @@ const { frontmatter } = contentFile;
 	<Header data={frontmatter}/>
 	<main>
 		<div class="content">
-			<SectionPosts />
+			<SectionEvents />
 			<SectionBridgePhrase phrase={frontmatter.phrase} />
 			<SectionMarquee words={frontmatter.marquee} />
 			<!-- <SectionInterlude /> -->
