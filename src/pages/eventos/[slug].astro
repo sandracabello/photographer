@@ -3,14 +3,14 @@
 import LayoutPage from "../../layouts/LayoutPage.astro"
 import marked from '../../js/marked.js'
 const { slug } = Astro.params;
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
-const event = (await getCollection("events")).find((e) => e.slug === slug);
+const event = (await getCollection("events")).find((e) => e.id === slug);
 if (!event) {
   return new Response(null, { status: 404, statusText: "Evento no encontrado" });
 }
 
-const content = await event.render();
+const content = await render(event);
 const data = content.remarkPluginFrontmatter
 const html = marked(event.body);
 

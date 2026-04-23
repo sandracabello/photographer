@@ -14,7 +14,7 @@ const events = await getCollection('events');
                 <div class="events-list__info">
                     <h2>{event.data.title}</h2>
                     <p>{event.data.description}</p>
-                    <a href={`/eventos/${event.slug}`} class="link">Ver más</a>
+                    <a href={`/eventos/${event.id}`} class="link">Ver más</a>
                 </div>
             </article>
         ))}
